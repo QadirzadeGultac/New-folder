@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Submit Media</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="screen">
+    <h2>Submit Your Photos or Video</h2>
+    <p class="coords">27.7125° N, 86.2240° E</p>
+
+    <!-- Media upload -->
+    <div class="box upload-box">
+      <label for="media-upload">+ Add Photo or Video</label>
+      <input type="file" id="media-upload" accept="image/*,video/*" multiple style="display: none;">
+    </div>
+
+    <!-- Optional statement -->
+    <textarea placeholder="Optional statement"></textarea>
+
+    <!-- Submit button -->
+    <button onclick="location.href='done.html'">Send</button>
+  </div>
+
+  <script>
+    // Click the label triggers file input
+    document.querySelector(".upload-box").addEventListener("click", () => {
+      document.getElementById("media-upload").click();
+    });
+  </script>
+</body>
+</html>

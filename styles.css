@@ -1,0 +1,128 @@
+/* /* style.css */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background: #f5f7fa;
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+}
+
+.screen {
+  width: 320px;
+  height: 640px;
+  background: white;
+  border-radius: 25px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background: #0094C9;
+  padding: 20px;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.content {
+  padding: 16px;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.photo-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.photo-row img {
+  width: 80px;
+  height: 60px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.input-box,
+.card,
+.chat-bubble {
+  background: #f0f3f8;
+  padding: 12px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+}
+
+.card p {
+  margin-top: 4px;
+  color: #333;
+}
+
+.status {
+  font-weight: bold;
+  color: #0094C9;
+  margin-bottom: 4px;
+}
+
+.button {
+  background: #007954;
+  color: white;
+  padding: 12px;
+  text-align: center;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 16px;
+}
+
+.chat-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.chat-bubble.user {
+  background: #0094C9;
+  color: white;
+  align-self: flex-end;
+}
+
+.chat-bubble.admin {
+  background: #e0e0e0;
+  color: #333;
+  align-self: flex-start;
+}
+
+.chat-input {
+  display: flex;
+  border-top: 1px solid #ccc;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  outline: none;
+}
+
+.chat-input button {
+  background: #0094C9;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  cursor: pointer;
+} */
