@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Admin Chat</title>
   <style>
-    
-    a{
+    a {
       text-decoration: none;
     }
+
     body {
       font-family: Arial, sans-serif;
       background: #f5f5f5;
@@ -15,21 +16,24 @@
       justify-content: center;
       padding: 30px;
     }
+
     .chat-container {
-      width: 90%;
+      width: 60%;
       background: white;
       border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       display: flex;
       flex-direction: column;
       height: 90vh;
     }
+
     .chat-header {
       padding: 15px;
       border-bottom: 1px solid #ddd;
       font-weight: bold;
-      font-size: 30px;
+      font-size: 18px;
     }
+
     .chat-messages {
       flex: 1;
       padding: 15px;
@@ -37,67 +41,75 @@
       display: flex;
       flex-direction: column;
     }
+
     .message {
       margin-bottom: 15px;
-      max-width: 70%;
+      max-width: 40%;
       padding: 10px 14px;
       border-radius: 10px;
       position: relative;
-      font-size: 35px;
+      font-size: 20px;
     }
+
     .message.user {
       background: #f1f1f1;
       align-self: flex-start;
       color: #000;
     }
+
     .message.admin {
       background: #222;
       color: white;
       align-self: flex-end;
     }
+
     .timestamp {
-      font-size: 25px;
+      font-size: 20px;
       color: #888;
       margin-top: 4px;
     }
+
     .chat-input {
       display: flex;
       border-top: 1px solid #ddd;
       padding: 10px;
     }
+
     .chat-input input {
       flex: 1;
       padding: 10px;
       border-radius: 8px;
       border: 1px solid #ccc;
-      font-size: 30px;
+      font-size: 20px;
       margin-right: 10px;
     }
+
     .chat-input button {
       background: black;
       color: white;
       border: none;
       padding: 10px 14px;
-      font-size: 30px;
+      font-size: 20px;
       border-radius: 8px;
       cursor: pointer;
     }
   </style>
 </head>
+
 <body>
   <div class="chat-container">
     <div class="chat-header"><a href="admin.html">←</a>Admin Chat</div>
     <div class="chat-messages" id="adminMessages">
       <div class="message user">
-        Hello, I've submitted my accident report. When will someone review it?
+        Salam
         <div class="timestamp">10:30 AM</div>
       </div>
-      <div class="message admin">
-        Hi Elvin, I'm reviewing your case now. Can you provide any additional details about the accident?
+      <div class="message user">
+        Men size melumatlari gonderdim
         <div class="timestamp">10:32 AM</div>
       </div>
-      <div class="message user">
-        Yes, it happened at the intersection. The other driver ran a red light.
+      <div class="message admin">
+        Salam. sizin mesajiniz alindi. Tesekkur edirik.melumatlarınız dəyərləndiriləcək.
         <div class="timestamp">10:35 AM</div>
       </div>
     </div>
@@ -142,4 +154,5 @@
     });
   </script>
 </body>
+
 </html>

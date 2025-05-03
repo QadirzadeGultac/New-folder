@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rating System</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #007954;
+    }
+
+    .stars {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .star {
+      font-size: 40px;
+      color: #ccc;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .star:hover,
+    .star.hovered,
+    .star.selected {
+      color: #f4b400;
+    }
+
+    .rating-value {
+      margin-top: 15px;
+      font-size: 18px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Rate Your Experience</h2>
+  <div class="stars" id="stars">
+    <span class="star" data-value="1">★</span>
+    <span class="star" data-value="2">★</span>
+    <span class="star" data-value="3">★</span>
+    <span class="star" data-value="4">★</span>
+    <span class="star" data-value="5">★</span>
+  </div>
+  <div class="rating-value" id="ratingValue">No rating yet</div>
+
+  <script>
+    const stars = document.querySelectorAll('.star');
+    const ratingValue = document.getElementById('ratingValue');
+    let selectedRating = 0;
+
+    stars.forEach((star, index) => {
+      star.addEventListener('mouseover', () => {
+        clearStars();
+        highlightStars(index);
+      });
+
+      star.addEventListener('mouseout', () => {
+        clearStars();
+        highlightStars(selectedRating - 1);
+      });
+
+      star.addEventListener('click', () => {
+        selectedRating = index + 1;
+        ratingValue.textContent = `You rated: ${selectedRating} star(s)`;
+        clearStars();
+        highlightStars(index);
+      });
+    });
+
+    function highlightStars(index) {
+      for (let i = 0; i <= index; i++) {
+        stars[i].classList.add('selected');
+      }
+    }
+
+    function clearStars() {
+      stars.forEach(star => star.classList.remove('selected'));
+    }
+  </script>
+
+</body>
+</html>

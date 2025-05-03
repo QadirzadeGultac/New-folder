@@ -87,7 +87,20 @@
 <body>
   <div class="chat-container">
     <div class="chat-header"><a href="userStatus.html">←</a> User Chat</div>
-    <div class="chat-messages" id="userMessages"></div>
+    <div class="chat-messages" id="userMessages">
+      <div class="message admin">
+       Salam
+        <div class="timestamp">10:30 AM</div>
+      </div>
+      <div class="message admin">
+        Men size melumatlari gonderdim
+        <div class="timestamp">10:32 AM</div>
+      </div>
+      <div class="message user">
+        Salam. sizin mesajiniz alindi. Tesekkur edirik.melumatlarınız dəyərləndiriləcək.
+        <div class="timestamp">10:35 AM</div>
+      </div>
+    </div>
     <div class="chat-input">
       <input type="text" id="userInput" placeholder="User: Type a message...">
       <button onclick="sendFromUser()">Send</button>

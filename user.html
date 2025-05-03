@@ -28,7 +28,10 @@
                 <label for="accident-date">Qəzanın Tarixi</label>
                 <input type="date" id="accident-date" required>
                 <label for="accident-location">Qəzanın Yeri</label>
-                <input type="text" id="accident-location" required>
+                <input type="text" id="accident-location" required placeholder="Yüklənir...">
+                <button type="button" onclick="getLocation()">📍 Yeri Göstər</button>
+
+
                 <label for="accident-description">Qəzanın Təsviri</label>
                 <textarea id="accident-description"></textarea>
             </fieldset>
@@ -58,7 +61,8 @@
             <button type="submit"><a href="userStatus.html">Tələbi Göndər</a></button>
         </form>
     </main>
-    <script src="app.js"></script>
+    <script src="app.js">
+    </script>
 </body>
 
 </html>
