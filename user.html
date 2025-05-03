@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="user.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="./assets/pasha-logo.svg" alt="pasha-logo" class="logo">
+        </div>
+        <div class="user-container">
+            <h3 style="color: #007954;">User</h3>
+            <img src="./assets/user.svg" alt="user">
+        </div>
+    </header>
+    <main>
+        <form id="insurance-claim-form">
+            <h1>Sığorta Tələbi</h1>
+            <p style="color: #0094C9;">Qəzanın təfərrüatlarını daxil edin və ödənişinizi alın.</p>
+
+            <!-- Sığorta məlumatları -->
+            <fieldset>
+                <legend>Sığorta Məlumatları</legend>
+                <label for="insurance-number">Sığorta Polisinin Nömrəsi</label>
+                <input type="text" id="insurance-number" required>
+            </fieldset>
+
+            <!-- Qəza məlumatları -->
+            <fieldset>
+                <legend>Qəza Detalları</legend>
+                <label for="accident-date">Qəzanın Tarixi</label>
+                <input type="date" id="accident-date" required>
+                <label for="accident-location">Qəzanın Yeri</label>
+                <input type="text" id="accident-location" required>
+                <label for="accident-description">Qəzanın Təsviri</label>
+                <textarea id="accident-description"></textarea>
+            </fieldset>
+            <!-- Zərər və ziyan -->
+            <fieldset>
+                <legend>Zərər Vəziyyəti</legend>
+
+                <!-- Kamera ilə çək -->
+                <label for="camera-upload" class="camera-label"><img src="./assets/camera.png" alt="camera"> Kamera ilə
+                    Çək</label>
+                <input type="file" id="camera-upload" accept="image/*" capture="environment" style="display: none;">
+
+                <!-- Qalereyadan seç -->
+                <label for="gallery-upload" class="gallery-label"><img src="./assets/folder.png" alt="folder">
+                    Qalereyadan Seç</label>
+                <input type="file" id="gallery-upload" accept="image/*" style="display: none;" multiple>
+            </fieldset>
+
+
+
+            <!-- Təsdiq -->
+            <fieldset>
+                <input type="checkbox" id="terms" required>
+                <label for="terms">Məlumatlar doğru və tamdır.</label>
+            </fieldset>
+
+            <button type="submit"><a href="userStatus.html">Tələbi Göndər</a></button>
+        </form>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>

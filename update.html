@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Status Update Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f0f0;
+      padding: 50px;
+      display: flex;
+      justify-content: center;
+    }
+    .form-container {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      width: 400px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      margin-bottom: 20px;
+      color: #222;
+    }
+    label {
+      display: block;
+      margin: 12px 0 6px;
+      font-weight: bold;
+    }
+    select, textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+    textarea {
+      height: 100px;
+      resize: vertical;
+    }
+    button {
+      margin-top: 20px;
+      width: 100%;
+      background: #000;
+      color: white;
+      padding: 12px;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    
+    a{
+      text-decoration: none;
+    }
+    button:hover {
+      background: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2><a href="admin.html">←</a> Update Case Status</h2>
+    <form id="statusForm">
+      <label for="status">Status</label>
+      <select id="status">
+        <option value="pending">Pending</option>
+        <option value="in_review" selected>In Review</option>
+        <option value="evacuator_assigned">Evacuator Assigned</option>
+        <option value="repair">Repair In Progress</option>
+        <option value="completed">Completed</option>
+      </select>
+
+      <label for="notes">Notes</label>
+      <textarea id="notes" placeholder="Add notes about this status update"></textarea>
+
+      <button type="submit">Update Status</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("statusForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const status = document.getElementById("status").value;
+      const notes = document.getElementById("notes").value;
+      alert(`Status updated to: ${status}\nNotes: ${notes}`);
+      // Here you could use fetch() to send data to backend API.
+    });
+  </script>
+</body>
+</html>
