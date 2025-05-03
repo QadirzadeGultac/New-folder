@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <title>User Chat</title>
   <style>
-    a {
+     
+     a{
       text-decoration: none;
     }
     body {
@@ -86,20 +87,7 @@
 <body>
   <div class="chat-container">
     <div class="chat-header"><a href="userStatus.html">←</a> User Chat</div>
-    <div class="chat-messages" id="userMessages">
-      <div class="message user">
-        Hello, I've submitted my accident report. When will someone review it?
-        <div class="timestamp">10:30 AM</div>
-      </div>
-      <div class="message admin">
-        Hi Elvin, I'm reviewing your case now. Can you provide any additional details about the accident?
-        <div class="timestamp">10:32 AM</div>
-      </div>
-      <div class="message user">
-        Yes, it happened at the intersection. The other driver ran a red light.
-        <div class="timestamp">10:35 AM</div>
-      </div>
-    </div>
+    <div class="chat-messages" id="userMessages"></div>
     <div class="chat-input">
       <input type="text" id="userInput" placeholder="User: Type a message...">
       <button onclick="sendFromUser()">Send</button>

@@ -3,8 +3,86 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Insurance Claim Cards</title>
+  <title>Insurance Claims Dashboard</title>
   <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      background-color: #f4f4f4;
+    }
+    h2 {
+      color: #333;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    th, td {
+      padding: 12px;
+      border-bottom: 1px solid #ccc;
+      text-align: left;
+    }
+    th {
+      background-color: #007954;
+      color: white;
+    }
+    tr:hover {
+      background-color: #f1f1f1;
+    }
+    .actions button {
+      padding: 6px 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-right: 5px;
+      font-size: 14px;
+    }
+    .chat-btn {
+      background-color: #007bff;
+      color: white;
+    }
+    .details-btn {
+      background-color: #000;
+      color: white;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: white;
+      padding: 20px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+      z-index: 1000;
+      width: 400px;
+      border-radius: 10px;
+    }
+    .modal-header {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .modal button {
+      margin-top: 10px;
+      background-color: #007954;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 999;
+    }
     header{
     display: flex;
     flex-direction: row;
@@ -13,10 +91,10 @@
     margin-bottom: 15px;
 }
 .logo-container img{
-    width: 130px;
+    width: 180px;
 }
 .user-container img{
-    width: 60px;
+    width: 90px;
     margin-left: 5px;
 }
 .user-container{
@@ -27,89 +105,9 @@
 .header-text h1{
     margin: 0;
 }
-    body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
-      background: #f7f7f7;
-    }
-    h2 {
-      margin-top: 30px;
-    }
-    .container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-    .card {
-      background: white;
-      border-radius: 10px;
-      padding: 16px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-      width: 300px;
-      position: relative;
-    }
-    .status {
-      position: absolute;
-      top: 16px;
-      right: 16px;
-      background: #007954;
-      color: white;
-      padding: 4px 10px;
-      font-size: 12px;
-      border-radius: 20px;
-    }
-    .status.new { background: #007bff; }
-    .status.review { background: #ffb300; }
-    .status.assigned { background: #673ab7; }
-    .info {
-      margin: 10px 0;
-    }
-    .info p {
-      margin: 4px 0;
-    }
-    .photos {
-      display: flex;
-      gap: 8px;
-      margin: 10px 0;
-    }
-    a{
-      text-decoration: none;
-    }
-    .photos img {
-      width: 80px;
-      height: 60px;
-      border-radius: 6px;
-      object-fit: cover;
-    }
-    .actions {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 10px;
-    }
-    .btn {
-      padding: 8px 12px;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-    .btn-chat {
-      background: #f0f0f0;
-    }
-    .btn-details {
-      background: #000;
-      color: white;
-    }
-    .chat-badge {
-      background: red;
-      color: white;
-      font-size: 10px;
-      border-radius: 50%;
-      padding: 2px 6px;
-      position: absolute;
-      top: 135px;
-      left: 60px;
-    }
+a{
+    text-decoration: none;
+}
   </style>
 </head>
 <body>
@@ -122,67 +120,80 @@
         <img src="./assets/user.svg" alt="user">
     </div>
 </header>
-  <h2>Insurance Claim Cards</h2>
-  <h3>New Claim</h3>
-  <div class="container">
-    <div class="card">
-      <div class="status new">New</div>
-      <p><strong>Claim #004</strong></p>
-      <div class="info">
-        <p>📅 Sep 20, 2023</p>
-        <p>🚗 Honda Civic (2019)<br>License: XYZ789</p>
-        <p>📍 101 Market St, San Francisco, CA 94105</p>
-      </div>
-      <div class="photos">
-        <img src="https://media.istockphoto.com/id/2176543563/photo/two-damaged-vehicles-in-car-accident-after-collision-on-city-street-road-safety-and-insurance.jpg?s=612x612&w=0&k=20&c=upCeMKdFjCDOgA38zJlfa5SurwouKXCPeEGlOM00u-Q=" />
-        <img src="https://media.istockphoto.com/id/2176543563/photo/two-damaged-vehicles-in-car-accident-after-collision-on-city-street-road-safety-and-insurance.jpg?s=612x612&w=0&k=20&c=upCeMKdFjCDOgA38zJlfa5SurwouKXCPeEGlOM00u-Q=" />
-      </div>
-      <div class="actions">
-        <button class="btn btn-chat"><a href="adminChat.html">💬 Chat</a></button>
-        <button class="btn btn-details"><a href="update.html">View Details ▶</a></button>
-      </div>
-    </div>
+  <h2>Insurance Claim Table View</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Claim #</th>
+        <th>Date</th>
+        <th>Vehicle</th>
+        <th>License</th>
+        <th>Location</th>
+        <th>Status</th>
+        <th>Assigned Admin</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>#004</td>
+        <td>Sep 20, 2023</td>
+        <td>Honda Civic (2019)</td>
+        <td>XYZ789</td>
+        <td>101 Market St, San Francisco, CA</td>
+        <td><span style="color: #007bff; font-weight: bold;">New</span></td>
+        <td>-</td>
+        <td class="actions">
+          <button class="chat-btn"><a href="adminChat.html">💬 Chat</a></button>
+          <button class="details-btn"><a href="update.html">Details</a></button>
+        </td>
+      </tr>
+      <tr>
+        <td>#001</td>
+        <td>Sep 15, 2023</td>
+        <td>Toyota Camry (2020)</td>
+        <td>ABC123</td>
+        <td>123 Broadway, New York, NY</td>
+        <td><span style="color: #ff9800; font-weight: bold;">In Review</span></td>
+        <td>Michael Brown</td>
+        <td class="actions">
+          <button class="chat-btn"><a href="adminChat.html">💬 Chat</a></button>
+          <button class="details-btn"><a href="update.html">Details</a></button>
+        </td>
+      </tr>
+      <tr>
+        <td>#004</td>
+        <td>Sep 20, 2023</td>
+        <td>Honda Civic (2019)</td>
+        <td>XYZ789</td>
+        <td>101 Market St, San Francisco, CA</td>
+        <td><span style="color: red; font-weight: bold;">Compe</span></td>
+        <td>-</td>
+        <td class="actions">
+          <button class="chat-btn"><a href="adminChat.html">💬 Chat</a></button>
+          <button class="details-btn"><a href="update.html">Details</a></button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="overlay" id="overlay"></div>
+  <div class="modal" id="modal">
+    <div class="modal-header" id="modal-title">Modal Title</div>
+    <p>This is a placeholder modal for chat or details.</p>
+    <button onclick="closeModal()">Close</button>
   </div>
 
-  <h3>In Review Claim</h3>
-  <div class="container">
-    <div class="card">
-      <div class="status review">In Review</div>
-      <p><strong>Claim #001</strong></p>
-      <div class="info">
-        <p>📅 Sep 15, 2023</p>
-        <p>🚗 Toyota Camry (2020)<br>License: ABC123</p>
-        <p>📍 123 Broadway, New York, NY 10001</p>
-      </div>
-      <div class="photos">
-        <img src="https://media.istockphoto.com/id/2176543563/photo/two-damaged-vehicles-in-car-accident-after-collision-on-city-street-road-safety-and-insurance.jpg?s=612x612&w=0&k=20&c=upCeMKdFjCDOgA38zJlfa5SurwouKXCPeEGlOM00u-Q=" />
-        <img src="https://media.istockphoto.com/id/2176543563/photo/two-damaged-vehicles-in-car-accident-after-collision-on-city-street-road-safety-and-insurance.jpg?s=612x612&w=0&k=20&c=upCeMKdFjCDOgA38zJlfa5SurwouKXCPeEGlOM00u-Q=" />
-      </div>
-      <div class="chat-badge">2</div>
-      <div class="actions">
-        <button class="btn btn-chat"><a href="adminChat.html">💬 Chat</a></button>
-        <button class="btn btn-details"><a href="update.html">View Details ▶</a></button>
-      </div>
-    </div>
-  </div>
-
-  <h3>Assigned Claim</h3>
-  <div class="container">
-    <div class="card">
-      <div class="status review">In Review</div>
-      <p><strong>Claim #001</strong></p>
-      <div class="info">
-        <p>📅 Sep 15, 2023</p>
-        <p>🚗 Toyota Camry (2020)<br>License: ABC123</p>
-        <p>📍 123 Broadway, New York, NY 10001</p>
-        <p>👤 Michael Brown <br><small>Admin</small></p>
-      </div>
-      <div class="actions">
-        <button class="btn btn-chat"><a href="adminChat.html">💬 Chat</a></button>
-        <button class="btn btn-details"><a href="update.html">View Details ▶</a></button>
-      </div>
-    </div>
-  </div>
-
+  <script>
+    function openModal(title) {
+      document.getElementById('modal-title').textContent = title;
+      document.getElementById('modal').style.display = 'block';
+      document.getElementById('overlay').style.display = 'block';
+    }
+    function closeModal() {
+      document.getElementById('modal').style.display = 'none';
+      document.getElementById('overlay').style.display = 'none';
+    }
+  </script>
 </body>
 </html>

@@ -71,6 +71,28 @@
     a{
       text-decoration: none;
     }
+    .timeline-container {
+  position: relative; /* əlavə et */
+}
+
+.btn-chat {
+  position: absolute;
+  bottom: 20px;
+  left: 90%;
+  transform: translateX(-50%);
+  background: #007954;
+  color: white;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 50%;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn-chat a {
+  color: white;
+}
+
   </style>
 </head>
 <body>
@@ -108,7 +130,8 @@
         <div class="step-description">Vehicle has been repaired and is ready for pickup</div>
       </div>
     </div>
-    <button class="btn btn-chat"><a href="userChat.html">💬 Chat</a></button>
   </div>
+  <button class="btn-chat"><a href="userChat.html">💬 Chat</a></button>
+
 </body>
 </html>
