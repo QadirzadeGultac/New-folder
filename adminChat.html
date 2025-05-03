@@ -87,7 +87,20 @@
 <body>
   <div class="chat-container">
     <div class="chat-header"><a href="admin.html">←</a>Admin Chat</div>
-    <div class="chat-messages" id="adminMessages"></div>
+    <div class="chat-messages" id="adminMessages">
+      <div class="message user">
+        Hello, I've submitted my accident report. When will someone review it?
+        <div class="timestamp">10:30 AM</div>
+      </div>
+      <div class="message admin">
+        Hi Elvin, I'm reviewing your case now. Can you provide any additional details about the accident?
+        <div class="timestamp">10:32 AM</div>
+      </div>
+      <div class="message user">
+        Yes, it happened at the intersection. The other driver ran a red light.
+        <div class="timestamp">10:35 AM</div>
+      </div>
+    </div>
     <div class="chat-input">
       <input type="text" id="adminInput" placeholder="Admin: Type a message...">
       <button onclick="sendFromAdmin()">Send</button>
